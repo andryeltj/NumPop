@@ -1,0 +1,507 @@
+function rgba (r, g, b, a)
+  --[[r = r or 255
+  g = g or 255
+  b = b or 255
+  a = a or 1]]
+  red = (r/255)
+  green = (g/255)
+  blue = (b/255)
+  return red, green, blue, a
+end
+
+function hex (value, a)
+  hexVal = string.sub(value, 2)
+  hexVal = string.upper(hexVal)
+  if #hexVal == 3 then
+    f = hexVal:sub(1,1)
+    s = hexVal:sub(2,2)
+    t = hexVal:sub(3,3)
+    hexVal = f..f..s..s..t..t
+  end
+  val = {}
+
+  for i=1, #hexVal do
+    char = hexVal:sub(i, i)
+    if char == "0" then
+      val[i] = "0" --tonumber(char)+1
+    elseif char == "1" then
+      val[i] = "1" --tonumber(char)+1
+    elseif char == "2" then
+      val[i] = "2" --tonumber(char)+1
+    elseif char == "3" then
+      val[i] = "3" --tonumber(char)+1
+    elseif char == "4" then
+      val[i] = "4"--tonumber(char)+1
+    elseif char == "5" then
+      val[i] = "5"--tonumber(char)+1
+    elseif char == "6" then
+      val[i] = "6" --tonumber(char)+1
+    elseif char == "7" then
+      val[i] = "7" --tonumber(char)+1
+    elseif char == "8" then
+      val[i] = "8" --tonumber(char)+1
+    elseif char == "9" then
+      val[i] = "9"--tonumber(char)+1]]
+    elseif char == "A" then
+      val[i] = 11
+    elseif char == "B" then
+      val[i] = 12
+    elseif char == "C" then
+      val[i] = 13
+    elseif char == "D" then
+      val[i] = 14
+    elseif char == "E" then
+      val[i] = 15
+    elseif char == "F" then
+      val[i] = 16
+    end
+  end
+  r = r or 255
+  g = g or 255
+  b = b or 255
+  a = a or 1
+  r = val[1] * 16 + val[2]
+  g = val[3] * 16 + val[4]
+  b = val[5] * 16 + val[6]
+  k = "272"
+  r = r/k
+  g = g/k
+  b = b/k
+  return {r,g,b, a}
+end
+function color(value, a)
+ who = value:sub(0,1)
+ value = string.upper(value)
+ if who == "#" then
+   return love.graphics.setColor(hex(value, a))
+   else
+   if not names[value] == true then 
+    return love.graphics.setColor(hex("#000000", "1"))
+    else
+    return love.graphics.setColor(hex(names[value], a))
+   end 
+ end
+end
+function paint(value, a)
+ who = value:sub(0,1)
+ value = string.upper(value)
+ 
+  if who == "#" then
+   return hex(value, a)
+   else
+   if not names[value] == true then 
+    return hex("#000000", a)
+    else
+    return hex(names[value], a)
+   end
+  end
+end
+color("#1988ff")
+names = {
+	ALICEBLUE = "#F0F8FF",
+	ANTIQUEWHITE = "#FAEBD7",
+	AQUA = "#00FFFF",
+	AQUAMARINE = "#7FFFD4",
+	AZURE = "#F0FFFF",
+	BEIGE = "#F5F5DC",
+	BISQUE = "#FFE4C4",
+	BLACK = "#000000",
+	BLANCHEDALMOND = "#FFEBCD",
+	BLUE = "#0000FF",
+	BLUEVIOLET = "#8A2BE2",
+	BROWN = "#A52A2A",
+	BURLYWOOD = "#DEB887",
+	CADETBLUE = "#5F9EA0",
+	CHARTREUSE = "#7FFF00",
+	CHOCOLATE = "#D2691E",            
+	CORAL = "#FF7F50",
+	CORNFLOWERBLUE = "#6495ED",
+	CORNSILK = "#FFF8DC",
+	CRIMSON = "#DC143C",
+	CYAN = "#00FFFF",
+	DARKBLUE = "#00008B",
+	DARKCYAN = "#008B8B",
+	DARKGOLDENROD = "#B8860B",
+	DARKGRAY = "#A9A9A9",
+	DARKGREEN = "#006400",
+	DARKGREY = "#A9A9A9",
+	DARKKHAKI = "#BDB76B",
+	DARKMAGENTA = "#8B008B",
+	DARKOLIVEGREEN = "#556B2F",
+	DARKORANGE = "#FF8C00",
+	DARKORCHID = "#9932CC",
+	DARKRED = "#8B0000",
+	DARKSALMON = "#E9967A",
+	DARKSEAGREEN = "#8FBC8F",
+	DARKSLATEBLUE = "#483D8B",
+	DARKSLATEGRAY = "#2F4F4F",
+	DARKSLATEGREY = "#2F4F4F",
+	DARKTURQUOISE = "#00CED1",
+	DARKVIOLET = "#9400D3",
+	DEEPPINK = "#FF1493",
+	DEEPSKYBLUE = "#00BFFF",
+	DIMGRAY = "#696969",
+	DIMGREY = "#696969",
+	DODGERBLUE = "#1E90FF",
+	FIREBRICK = "#B22222",
+	FLORALWHITE = "#FFFAF0",
+	FORESTGREEN = "#228B22",
+	FUCHSIA = "#FF00FF",
+	GAINSBORO = "#DCDCDC",
+	GHOSTWHITE = "#F8F8FF",
+	GOLD = "#FFD700",
+	GOLDENROD = "#DAA520",
+	GRAY = "#808080",
+	GREEN = "#008000",
+	GREENYELLOW = "#ADFF2F",
+	GREY = "#808080",
+	HONEYDEW = "#F0FFF0",
+	HOTPINK = "#FF69B4",
+	INDIANRED = "#CD5C5C",
+	INDIGO = "#4B0082",
+	IVORY = "#FFFFF0",
+	KHAKI = "#F0E68C",
+	LAVENDER = "#E6E6FA",
+	LAVENDERBLUSH = "#FFF0F5",
+	LAWNGREEN = "#7CFC00",
+	LEMONCHIFFON = "#FFFACD",
+	LIGHTBLUE = "#ADD8E6",
+	LIGHTCORAL = "#F08080",
+	LIGHTCYAN = "#E0FFFF",
+	LIGHTGOLDENRODYELLOW = "#FAFAD2",
+	LIGHTGRAY = "#D3D3D3",
+	LIGHTGREEN = "#90EE90",
+	LIGHTGREY = "#D3D3D3",
+	LIGHTPINK = "#FFB6C1",
+	LIGHTSALMON = "#FFA07A",
+	LIGHTSEAGREEN = "#20B2AA",
+	LIGHTSKYBLUE = "#87CEFA",
+	LIGHTSLATEGRAY = "#778899",
+	LIGHTSLATEGREY = "#778899",
+	LIGHTSTEELBLUE = "#B0C4DE",
+	LIGHTYELLOW = "#FFFFE0",
+	LIME = "#00FF00",
+	LIMEGREEN = "#32CD32",
+	LINEN = "#FAF0E6",
+	MAGENTA = "#FF00FF",
+	MAROON = "#800000",
+	MEDIUMAQUAMARINE = "#66CDAA",
+	MEDIUMBLUE = "#0000CD",
+	MEDIUMORCHID = "#BA55D3",
+	MEDIUMPURPLE = "#9370DB",
+	MEDIUMSEAGREEN = "#3CB371",
+	MEDIUMSLATEBLUE = "#7B68EE",
+	MEDIUMSPRINGGREEN = "#00FA9A",
+	MEDIUMTURQUOISE = "#48D1CC",
+	MEDIUMVIOLETRED = "#C71585",
+	MIDNIGHTBLUE = "#191970",
+	MINTCREAM = "#F5FFFA",
+	MISTYROSE = "#FFE4E1",
+	MOCCASIN = "#FFE4B5",
+	NAVAJOWHITE = "#FFDEAD",
+	NAVY = "#000080",
+	OLDLACE = "#FDF5E6",
+	OLIVE = "#808000",
+	OLIVEDRAB = "#6B8E23",
+	ORANGE = "#FFA500",
+	ORANGERED = "#FF4500",
+	ORCHID = "#DA70D6",
+	PALEGOLDENROD = "#EEE8AA",
+	PALEGREEN = "#98FB98",
+	PALETURQUOISE = "#AFEEEE",
+	PALEVIOLETRED = "#DB7093",
+	PAPAYAWHIP = "#FFEFD5",
+	PEACHPUFF = "#FFDAB9",
+	PERU = "#CD853F",
+	PINK = "#FFC0CB",
+	PLUM = "#DDA0DD",
+	POWDERBLUE = "#B0E0E6",
+	PURPLE = "#800080",
+	REBECCAPURPLE = "#603090",
+	RED = "#FF0000",
+	ROSYBROWN = "#BC8F8F",
+	ROYALBLUE = "#4169E1",
+	SADDLEBROWN = "#8B4513",
+	SALMON = "#FA8072",
+	SANDYBROWN = "#F4A460",
+	SEAGREEN = "#2E8B57",
+	SEASHELL = "#FFF5EE",
+	SIENNA = "#A0522D",
+	SILVER = "#C0C0C0",
+	SKYBLUE = "#87CEEB",
+	SLATEBLUE = "#6A5ACD",
+	SLATEGRAY = "#708090",
+	SLATEGREY = "#708090",
+	SNOW = "#FFFAFA",
+	SPRINGGREEN = "#00FF7F",
+	STEELBLUE = "#4682B4",
+	TAN = "#D2B48C",
+	TEAL = "#008080",
+	THISTLE = "#D8BFD8",
+	TOMATO = "#FF6347",
+	TURQUOISE = "#40E0D0",
+	VIOLET = "#EE82EE",
+	WHEAT = "#F5DEB3",
+	WHITE = "#FFFFFF",
+	WHITESMOKE = "#F5F5F5",
+	YELLOW = "#FFFF00",
+	YELLOWGREEN = "#9ACD32",
+	RED50 = "#FFEBEE",
+	RED100 = "#FFCDD2",
+	RED200 = "#EF9A9A",
+	RED300 = "#E57373",
+	RED400 = "#EF5350",
+	RED500 = "#F44336",
+	RED600 = "#E53935",
+	RED700 = "#D32F2F",
+	RED800 = "#C62828",
+	RED900 = "#B71C1C",
+	REDA100 = "#FF8A80",
+	REDA200 = "#FF5252",
+	REDA400 = "#FF1744",
+	REDA700 = "#D50000",
+	PINK50 = "#FCE4EC",
+	PINK100 = "#F8BBD0",
+	PINK200 = "#F48FB1",
+	PINK300 = "#F06292",
+	PINK400 = "#EC407A",
+	PINK500 = "#E91E63",
+	PINK600 = "#D81B60",
+	PINK700 = "#C2185B",
+	PINK800 = "#AD1457",
+	PINK900 = "#880E4F",
+	PINKA100 = "#FF80AB",
+	PINKA200 = "#FF4081",
+	PINKA400 = "#F50057",
+	PINKA700 = "#C51162",
+	PURPLE50 = "#F3E5F5",
+	PURPLE100 = "#E1BEE7",
+	PURPLE200 = "#CE93D8",
+	PURPLE300 = "#BA68C8",
+	PURPLE400 = "#AB47BC",
+	PURPLE500 = "#9C27B0",
+	PURPLE600 = "#8E24AA",
+	PURPLE700 = "#7B1FA2",
+	PURPLE800 = "#6A1B9A",
+	PURPLE900 = "#4A148C",
+	PURPLEA100 = "#EA80FC",
+	PURPLEA200 = "#E040FB",
+	PURPLEA400 = "#D500F9",
+	PURPLEA700 = "#AA00FF",
+	DEEPPURPLE = "#673AB7",
+	DEEPPURPLE50 = "#EDE7F6",
+	DEEPPURPLE100 = "#D1C4E9",
+	DEEPPURPLE200 = "#B39DDB",
+	DEEPPURPLE300 = "#9575CD",
+	DEEPPURPLE400 = "#7E57C2",
+	DEEPPURPLE500 = "#673AB7",
+	DEEPPURPLE600 = "#5E35B1",
+	DEEPPURPLE700 = "#512DA8",
+	DEEPPURPLE800 = "#4527A0",
+	DEEPPURPLE900 = "#311B92",
+	DEEPPURPLEA100 = "#B388FF",
+	DEEPPURPLEA200 = "#7C4DFF",
+	DEEPPURPLEA400 = "#651FFF",
+	DEEPPURPLEA700 = "#6200EA",
+	INDIGO50 = "#E8EAF6",
+	INDIGO100 = "#C5CAE9",
+	INDIGO200 = "#9FA8DA",
+	INDIGO300 = "#7986CB",
+	INDIGO400 = "#5C6BC0",
+	INDIGO500 = "#3F51B5",
+	INDIGO600 = "#3949AB",
+	INDIGO700 = "#303F9F",
+	INDIGO800 = "#283593",
+	INDIGO900 = "#1A237E",
+	INDIGOA100 = "#8C9EFF",
+	INDIGOA200 = "#536DFE",
+	INDIGOA400 = "#3D5AFE",
+	INDIGOA700 = "#304FFE",
+	BLUE50 = "#E3F2FD",
+	BLUE100 = "#BBDEFB",
+	BLUE200 = "#90CAF9",
+	BLUE300 = "#64B5F6",
+	BLUE400 = "#42A5F5",
+	BLUE500 = "#2196F3",
+	BLUE600 = "#1E88E5",
+	BLUE700 = "#1976D2",
+	BLUE800 = "#1565C0",
+	BLUE900 = "#0D47A1",
+	BLUEA100 = "#82B1FF",
+	BLUEA200 = "#448AFF",
+	BLUEA400 = "#2979FF",
+	BLUEA700 = "#2962FF",
+	LIGHTBLUE50 = "#E1F5FE",
+	LIGHTBLUE100 = "#B3E5FC",
+	LIGHTBLUE200 = "#81D4FA",
+	LIGHTBLUE300 = "#4FC3F7",
+	LIGHTBLUE400 = "#29B6F6",
+	LIGHTBLUE500 = "#03A9F4",
+	LIGHTBLUE600 = "#039BE5",
+	LIGHTBLUE700 = "#0288D1",
+	LIGHTBLUE800 = "#0277BD",
+	LIGHTBLUE900 = "#01579B",
+	LIGHTBLUEA100 = "#80D8FF",
+	LIGHTBLUEA200 = "#40C4FF",
+	LIGHTBLUEA400 = "#00B0FF",
+	LIGHTBLUEA700 = "#0091EA",
+	CYAN50 = "#E0F7FA",
+	CYAN100 = "#B2EBF2",
+	CYAN200 = "#80DEEA",
+	CYAN300 = "#4DD0E1",
+	CYAN400 = "#26C6DA",
+	CYAN500 = "#00BCD4",
+	CYAN600 = "#00ACC1",
+	CYAN700 = "#0097A7",
+	CYAN800 = "#00838F",
+	CYAN900 = "#006064",
+	CYANA100 = "#84FFFF",
+	CYANA200 = "#18FFFF",
+	CYANA400 = "#00E5FF",
+	CYANA700 = "#00B8D4",
+	TEAL50 = "#E0F2F1",
+	TEAL100 = "#B2DFDB",
+	TEAL200 = "#80CBC4",
+	TEAL300 = "#4DB6AC",
+	TEAL400 = "#26A69A",
+	TEAL500 = "#009688",
+	TEAL600 = "#00897B",
+	TEAL700 = "#00796B",
+	TEAL800 = "#00695C",
+	TEAL900 = "#004D40",
+	TEALA100 = "#A7FFEB",
+	TEALA200 = "#64FFDA",
+	TEALA400 = "#1DE9B6",
+	TEALA700 = "#00BFA5",
+	GREEN50 = "#E8F5E9",
+	GREEN100 = "#C8E6C9",
+	GREEN200 = "#A5D6A7",
+	GREEN300 = "#81C784",
+	GREEN400 = "#66BB6A",
+	GREEN500 = "#4CAF50",
+	GREEN600 = "#43A047",
+	GREEN700 = "#388E3C",
+	GREEN800 = "#2E7D32",
+	GREEN900 = "#1B5E20",
+	GREENA100 = "#B9F6CA",
+	GREENA200 = "#69F0AE",
+	GREENA400 = "#00E676",
+	GREENA700 = "#00C853",
+	LIGHTGREEN50 = "#F1F8E9",
+	LIGHTGREEN100 = "#DCEDC8",
+	LIGHTGREEN200 = "#C5E1A5",
+	LIGHTGREEN300 = "#AED581",
+	LIGHTGREEN400 = "#9CCC65",
+	LIGHTGREEN500 = "#8BC34A",
+	LIGHTGREEN600 = "#7CB342",
+	LIGHTGREEN700 = "#689F38",
+	LIGHTGREEN800 = "#558B2F",
+	LIGHTGREEN900 = "#33691E",
+	LIGHTGREENA100 = "#CCFF90",
+	LIGHTGREENA200 = "#B2FF59",
+	LIGHTGREENA400 = "#76FF03",
+	LIGHTGREENA700 = "#64DD17",
+	LIME50 = "#F9FBE7",
+	LIME100 = "#F0F4C3",
+	LIME200 = "#E6EE9C",
+	LIME300 = "#DCE775",
+	LIME400 = "#D4E157",
+	LIME500 = "#CDDC39",
+	LIME600 = "#C0CA33",
+	LIME700 = "#AFB42B",
+	LIME800 = "#9E9D24",
+	LIME900 = "#827717",
+	LIMEA100 = "#F4FF81",
+	LIMEA200 = "#EEFF41",
+	LIMEA400 = "#C6FF00",
+	LIMEA700 = "#AEEA00",
+	YELLOW50 = "#FFFDE7",
+	YELLOW100 = "#FFF9C4",
+	YELLOW200 = "#FFF59D",
+	YELLOW300 = "#FFF176",
+	YELLOW400 = "#FFEE58",
+	YELLOW500 = "#FFEB3B",
+	YELLOW600 = "#FDD835",
+	YELLOW700 = "#FBC02D",
+	YELLOW800 = "#F9A825",
+	YELLOW900 = "#F57F17",
+	YELLOWA100 = "#FFFF8D",
+	YELLOWA200 = "#FFFF00",
+	YELLOWA400 = "#FFEA00",
+	YELLOWA700 = "#FFD600",
+	AMBER = "#FFC107",
+	AMBER50 = "#FFF8E1",
+	AMBER100 = "#FFECB3",
+	AMBER200 = "#FFE082",
+	AMBER300 = "#FFD54F",
+	AMBER400 = "#FFCA28",
+	AMBER500 = "#FFC107",
+	AMBER600 = "#FFB300",
+	AMBER700 = "#FFA000",
+	AMBER800 = "#FF8F00",
+	AMBER900 = "#FF6F00",
+	AMBERA100 = "#FFE57F",
+	AMBERA200 = "#FFD740",
+	AMBERA400 = "#FFC400",
+	AMBERA700 = "#FFAB00",
+	ORANGE50 = "#FFF3E0",
+	ORANGE100 = "#FFE0B2",
+	ORANGE200 = "#FFCC80",
+	ORANGE300 = "#FFB74D",
+	ORANGE400 = "#FFA726",
+	ORANGE500 = "#FF9800",
+	ORANGE600 = "#FB8C00",
+	ORANGE700 = "#F57C00",
+	ORANGE800 = "#EF6C00",
+	ORANGE900 = "#E65100",
+	ORANGEA100 = "#FFD180",
+	ORANGEA200 = "#FFAB40",
+	ORANGEA400 = "#FF9100",
+	ORANGEA700 = "#FF6D00",
+	DEEPORANGE = "#FF5722",
+	DEEPORANGE50 = "#FBE9E7",
+	DEEPORANGE100 = "#FFCCBC",
+	DEEPORANGE200 = "#FFAB91",
+	DEEPORANGE300 = "#FF8A65",
+	DEEPORANGE400 = "#FF7043",
+	DEEPORANGE500 = "#FF5722",
+	DEEPORANGE600 = "#F4511E",
+	DEEPORANGE700 = "#E64A19",
+	DEEPORANGE800 = "#D84315",
+	DEEPORANGE900 = "#BF360C",
+	DEEPORANGEA100 = "#FF9E80",
+	DEEPORANGEA200 = "#FF6E40",
+	DEEPORANGEA400 = "#FF3D00",
+	DEEPORANGEA700 = "#DD2C00",
+	BROWN50 = "#EFEBE9",
+	BROWN100 = "#D7CCC8",
+	BROWN200 = "#BCAAA4",
+	BROWN300 = "#A1887F",
+	BROWN400 = "#8D6E63",
+	BROWN500 = "#795548",
+	BROWN600 = "#6D4C41",
+	BROWN700 = "#5D4037",
+	BROWN800 = "#4E342E",
+	BROWN900 = "#3E2723",
+	GREY50 = "#FAFAFA",
+	GREY100 = "#F5F5F5",
+	GREY200 = "#EEEEEE",
+	GREY300 = "#E0E0E0",
+	GREY400 = "#BDBDBD",
+	GREY500 = "#9E9E9E",
+	GREY600 = "#757575",
+	GREY700 = "#616161",
+	GREY800 = "#424242",
+	GREY900 = "#212121",
+	BLUEGREY = "#607D8B",
+	BLUEGREY50 = "#ECEFF1",
+	BLUEGREY100 = "#CFD8DC",
+	BLUEGREY200 = "#B0BEC5",
+	BLUEGREY300 = "#90A4AE",
+	BLUEGREY400 = "#78909C",
+	BLUEGREY500 = "#607D8B",
+	BLUEGREY600 = "#546E7A",
+	BLUEGREY700 = "#455A64",
+	BLUEGREY800 = "#37474F",
+	BLUEGREY900 = "#263238",
+}
