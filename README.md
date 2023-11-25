@@ -39,8 +39,8 @@ Desenvolvido usando a linguagem ![Lua](https://www.lua.org/docs.html) e o motor 
 | > $ ./love-11.4-x86_64.AppImage ![NumPop.love](https://github.com/andryeltj/NumPop/releases/download/NumPop/NumPop.love) |
 
 
-Gostou? Contribua!
+Obrigado. Divirta-se!
 
-![](https://raw.githubusercontent.com/andryeltj/aio/master/themes/images/contribua.png) 
 
- [Buy Me a Coffee ![48x48](https://raw.githubusercontent.com/andryeltj/receitas/master/icons/buy-me-a-cofee.svg) ](https://www.buymeacoffee.com/andryel.aio)
+
+ [![Gostou? Contribua](https://raw.githubusercontent.com/andryeltj/NumPop/main/res/PIX-NumPop.png)](https://abre.ai/numpop-qr)
