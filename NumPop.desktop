@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name = NumPop
-Icon = /home/aeos/projects/NumPop/res/NumPop.png
-Exec = love /home/aeos/projects/NumPop
+Icon = ~/NumPop/res/NumPop.png
+Exec = love ~/NumPop
 Type = Application
 Categories = Game
