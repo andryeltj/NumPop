@@ -6,7 +6,7 @@ Se divertir com um joguinho para o teclado numérico no estilo PopIt.
 ## Como Jogar:
  - Entre com o 'seu nome' no campo, e tecle em *Enter* pra iniciar o jogo.
  - **Utilize o Teclado Numérico para jogar**.
- - Completando os números, clique no ***Enter do Teclado Numérico*** ou n ***Barra de Espaço*** para confirmar que você concluiu a tarefa.
+ - Completando os números, clique no ***Enter do Teclado Numérico*** ou na ***Barra de Espaço*** para confirmar que você concluiu a tarefa.
  - Clique nos numeros correspondentes que aparecem **em laranja**.
  - Os completos aparecerão em verde.
  - Clicar em qualquer botão no teclado numérico numérico que não seja jogável, será aplicada uma penalidade na pontuação.
