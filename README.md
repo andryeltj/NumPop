@@ -26,6 +26,10 @@ Desenvolvido usando a linguagem ![Lua](https://www.lua.org/docs.html) e o motor 
 
 # ***Ainda em estágio de finalização.***
 
+Varsão Atual: **B23kz0017**
+
+Versão Anterior: **B23kx2204**
+
 | Items de Instalação ||
 | ---------- | ----------:|
 | **Windows** | **Linux** |
