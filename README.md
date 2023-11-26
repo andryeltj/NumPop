@@ -12,7 +12,7 @@ Se divertir com um joguinho para o teclado numérico no estilo PopIt.
  - Clicar em qualquer botão no teclado numérico numérico que não seja jogável, será aplicada uma penalidade na pontuação.
  - Você tem 3 vidas. 3 erros e será o fim do jogo.
  - Clique em ***R*** para reiniciar o jogo a qualquer momento.
- - Clique em ***M*** ou **Tab** para tocar ou não a música de fundo.
+ - Clique em ***M ou Tab** para tocar ou não a música de fundo.
  - Clique em ***Esc, I ou H*** para exibir a tela de ajuda
 
 Tente marcar a maior quantidade de pontos possíveis, você e seus amigos.
