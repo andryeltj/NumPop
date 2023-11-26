@@ -6,13 +6,14 @@ Se divertir com um joguinho para o teclado numérico no estilo PopIt.
 ## Como Jogar:
  - Entre com o 'seu nome' no campo, e tecle em *Enter* pra iniciar o jogo.
  - **Utilize o Teclado Numérico para jogar**.
- - Completando os números, clique no ***Enter do Teclado Numérico*** para confirmar que você concluiu a tarefa.
+ - Completando os números, clique no ***Enter do Teclado Numérico*** ou n ***Barra de Espaço*** para confirmar que você concluiu a tarefa.
  - Clique nos numeros correspondentes que aparecem **em laranja**.
  - Os completos aparecerão em verde.
  - Clicar em qualquer botão no teclado numérico numérico que não seja jogável, será aplicada uma penalidade na pontuação.
  - Você tem 3 vidas. 3 erros e será o fim do jogo.
  - Clique em ***R*** para reiniciar o jogo a qualquer momento.
- - Clique em ***M*** para tocar ou não a música de fundo.
+ - Clique em ***M*** ou **Tab** para tocar ou não a música de fundo.
+ - Clique em ***Esc, I ou H*** para exibir a tela de ajuda
 
 Tente marcar a maior quantidade de pontos possíveis, você e seus amigos.
 
